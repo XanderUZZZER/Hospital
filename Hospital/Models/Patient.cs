@@ -5,13 +5,6 @@ using System.Web;
 
 namespace Hospital.Models
 {
-    public enum PatientStatus
-    {
-        Arrived = 1,
-        Sick,
-        Healthy
-    }
-
     public class Patient
     {
         public int Id { get; set; }

@@ -15,9 +15,16 @@ namespace Hospital.Controllers
         private HospitalContext db = new HospitalContext();
 
         // GET: Patients
-        public ActionResult Index()
+        public ActionResult Index(string name)
         {
-            return View(db.Patients.ToList());
+            var patients = db.Patients.ToList();
+
+            if (!String.IsNullOrEmpty(name))
+            {
+                patients = patients.Where(d => d.Name.ToLower().Contains(name.ToLower())).ToList();
+            }
+
+            return View(patients);
         }
 
         // GET: Doctors/Details/5

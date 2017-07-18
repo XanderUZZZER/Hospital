@@ -145,6 +145,7 @@
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\HospitalContext.cs" />
     <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PatientStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

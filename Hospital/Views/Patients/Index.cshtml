@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Hospital.Models.Patient>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Patients";
 }
 
-<h2>Index</h2>
+<h2>Patients</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -16,12 +16,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DayOfBirth)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TaxCode)
         </th>
         <th></th>
     </tr>
@@ -35,12 +29,6 @@
             @Html.DisplayFor(modelItem => item.Status)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DayOfBirth)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TaxCode)
-        </td>
-        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
@@ -49,3 +37,11 @@
 }
 
 </table>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Search by name: @Html.TextBox("Name")
+        <input type="submit" value="Name" />
+    </p>
+}
